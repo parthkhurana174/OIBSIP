@@ -34,6 +34,7 @@ body {
 
 nav {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
@@ -46,6 +47,7 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 2rem;
 }
@@ -120,16 +122,8 @@ nav {
     align-items: center;
 }
 
-.bg_img_1 {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-100%);
-    opacity: 0.6s;
-    z-index: -1;
-}
 
-.bg_img_2 {
+.bg_img_1 {
     position: absolute;
     bottom: 2rem;
     right: 50%;
@@ -139,26 +133,24 @@ nav {
 }
 
 .socials {
-    position: absolute;
-    top: 25rem;
-    left: 0;
+    padding-top: 10px;
+    padding-left: 47%;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
+    gap: .5rem;
 }
 
 .socials::after {
     position: absolute;
     content: "";
-    top: -22rem;
+    top: 1rem;
     left: 15px;
-    height: 15rem;
     width: 2px;
     background-color: var(--white);
 }
 
 .socials span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--white);
 }
 
@@ -275,5 +267,33 @@ nav {
 
     .destination_grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+footer {
+    background: rgba(2, 82, 89, .9);
+    color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+}
+
+.footer-container a {
+    color: rgb(255, 255, 20);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 20px;
     }
 }
