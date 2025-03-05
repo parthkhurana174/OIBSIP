@@ -29,15 +29,47 @@
             <div class="header-right">
                 <p><b>Hello, I'm</b></p>
                 <h1>Parth Khurana</h1>
-                <h2>Frontend Developer</h2>
+                <!-- <h2>Frontend Developer</h2> -->
+                <h2 id="changing-text">Frontend Developer</h2>
+                <script>
+                    const textElement = document.getElementById("changing-text");
+                    const words = ["Frontend Developer", "Backend Developer", "Full Stack Developer", "MERN Stack Developer"];
+                    let wordIndex = 0;
+                    let charIndex = 0;
+                    let isDeleting = false;
+                    function typeEffect() {
+                        let currentWord = words[wordIndex];
+                        textElement.textContent = currentWord.substring(0, charIndex);
+                        if (!isDeleting) {
+                            charIndex++;
+                        } else {
+                            charIndex--;
+                        }
+                        if (!isDeleting && charIndex === currentWord.length) {
+                            isDeleting = true;
+                            setTimeout(typeEffect, 500);
+                            return;
+                        }
+                        if (isDeleting && charIndex === 0) {
+                            isDeleting = false;
+                            wordIndex = (wordIndex + 1) % words.length;
+                        }
+
+                        setTimeout(typeEffect, isDeleting ? 70 : 110);
+                    }
+                    typeEffect(); 
+                </script>
+
                 <div class="header-action-aria">
                     <a href="https://wa.me/917973868516" target="_blank" class="btn btn-dark hire-me-btn">Hire Me</a>
                     <a href="" class="btn" download="/assets/ParthKhurana_FullStackDeveloper_Resume.pdf">Download CV</a>
                     <a href="#Contact" class="btn btn-dark">Contact info</a>
                 </div>
                 <div class="header-social">
-                    <a href="https://www.linkedin.com/in/parth-khurana01" target="_blank"><img src="assets/linkedin.png" class="icon1"></a>
-                    <a href="https://github.com/parthkhurana174" target="_blank"><img src="assets/github.png" class="icon1"></a>
+                    <a href="https://www.linkedin.com/in/parth-khurana01" target="_blank"><img src="assets/linkedin.png"
+                            class="icon1"></a>
+                    <a href="https://github.com/parthkhurana174" target="_blank"><img src="assets/github.png"
+                            class="icon1"></a>
                 </div>
             </div>
         </div>
@@ -71,7 +103,9 @@
                     </div>
                 </div>
                 <p>
-                    I am a dedicated Web developer currently pursuing a BCA degree. I specialize in creating dynamic and responsive web applications using the MERN stack. Passionate about coding, I continuously explore new technologies to enhance my skills.
+                    I am a dedicated Web developer currently pursuing a BCA degree. I specialize in creating dynamic and
+                    responsive web applications using the MERN stack. Passionate about coding, I continuously explore
+                    new technologies to enhance my skills.
                 </p>
             </div>
         </div>
@@ -155,7 +189,7 @@
                 </div>
             </div>
         </div>
-    </section>  
+    </section>
 
     <section id="Projects">
         <a href="#Projects" class="arrow"><img src="assets/arrow.png" class="icon1"></a>
@@ -175,7 +209,8 @@
                 <h3>Project 2</h3>
                 <div class="header-action-aria">
                     <a href="https://github.com/parthkhurana174/SpotifyProject" class="btn" target="_blank">Github</a>
-                    <a href="https://parthkhurana174.github.io/SpotifyProject/" class="btn" target="_blank">Live Demo</a>
+                    <a href="https://parthkhurana174.github.io/SpotifyProject/" class="btn" target="_blank">Live
+                        Demo</a>
                 </div>
             </div>
             <div class="project">
@@ -196,11 +231,15 @@
         <div class="container contact-container">
             <div class="email">
                 <img src="assets/email.png" class="icon1">
-                <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=parthkhurana174@gmail.com" target="_blank"><h5>parthkhurana174@gmail.com</h5></a>
+                <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=parthkhurana174@gmail.com" target="_blank">
+                    <h5>parthkhurana174@gmail.com</h5>
+                </a>
             </div>
             <div class="linkedin">
                 <img src="assets/linkedin.png" class="icon1">
-                <a href="https://www.linkedin.com/in/parth-khurana01" target="_blank"><h5>Linkedin</h5></a>
+                <a href="https://www.linkedin.com/in/parth-khurana01" target="_blank">
+                    <h5>Linkedin</h5>
+                </a>
             </div>
         </div>
     </section>
