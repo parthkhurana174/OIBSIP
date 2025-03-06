@@ -18,17 +18,14 @@
     --transition: .4s ease;
 }
 html,body{
-    overflow-x: hidden;
     max-width: 100%;
 }
 .container, section {
     max-width: 100%;
-    overflow: hidden;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
     display: block;
 }
 
